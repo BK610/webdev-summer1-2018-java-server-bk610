@@ -15,9 +15,44 @@
     var tbody = $('tbody');
     tbody.empty();
     for(var i=0; i<users.length; i++) {
-      var user = users[i];
+    	
+      renderUser(user[i]);
+      tbody.append(renderUser(user[i]));
+    }
+  }
 
-      var tr = $('<tr>');
+  function deleteUser(event) {
+    console.log(event);
+    var $button = $(event.currentTarget);
+    var id = $button.attr('id');
+
+    userServiceClient
+      .deleteUser(id)
+      .then(function () {
+        userServiceClient
+          .findAllUsers()
+          .then(renderUsers);
+      });
+  }
+  
+  function createUser() {
+	  
+  }
+  
+  function findAllUsers() {
+	  
+  }
+  
+  function selectUser() {
+	  
+  }
+  
+  function updateUser() {
+	  
+  }
+  
+  function renderUser(user) {
+	  var tr = $('<tr>');
       var td = $('<td>');
       td.append(user.username);
       tr.append(td);
@@ -48,22 +83,7 @@
       deleteBtn.attr('id', user.id);
       td.append(deleteBtn);
       tr.append(td);
-
-      tr.appendTo(tbody);
-    }
-  }
-
-  function deleteUser(event) {
-    console.log(event);
-    var $button = $(event.currentTarget);
-    var id = $button.attr('id');
-
-    userServiceClient
-      .deleteUser(id)
-      .then(function () {
-        userServiceClient
-          .findAllUsers()
-          .then(renderUsers);
-      });
+      
+      return tr;
   }
 })();
