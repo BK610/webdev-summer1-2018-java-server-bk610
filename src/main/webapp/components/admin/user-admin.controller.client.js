@@ -45,8 +45,18 @@
 	  
   }
   
-  function updateUser() {
-	  
+  function updateUser(event) {
+	console.log(event);
+    var $button = $(event.currentTarget);
+    var id = $button.attr('id');
+
+    userServiceClient
+      .updateUser(id)
+      .then(function () {
+        userServiceClient
+          .findAllUsers()
+          .then(renderUsers);
+      });
   }
   
   function renderUser(user) {

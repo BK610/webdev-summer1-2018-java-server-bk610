@@ -2,6 +2,7 @@ function UserServiceClient() {
 
   this.findAllUsers = findAllUsers;
   this.deleteUser = deleteUser;
+  this.updateUser = updateUser;
 
   function deleteUser(id) {
     var url = "/api/user/" + id;
@@ -19,4 +20,11 @@ function UserServiceClient() {
       });
   }
 
+  function updateUser(id) {
+	  var url = "/api/user/" + id;
+	  
+	  return fetch(url, {
+		  method: 'update'
+	  })
+  }
 }
