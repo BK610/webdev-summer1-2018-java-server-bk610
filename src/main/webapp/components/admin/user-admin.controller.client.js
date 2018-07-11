@@ -3,9 +3,22 @@
   var userServiceClient = new UserServiceClient();
 
   function init() {
-    userServiceClient
-      .findAllUsers()
-      .then(renderUsers);
+	var usernameFld = $('<th>Username</th>');
+	var passwordFld = $('<th>Password</th>');
+	var firstNameFld = $('<th>First</th>');
+	var lastNameFld = $('<th>Last</th>');
+	var emailFld = $('<th>Email</th>');
+	var roleFld = $('<th>Role</th>');
+	
+	var updateBtn = $('<button>Update</button>');
+	updateBtn.click(updateUser);
+	
+	var createBtn = $('<button>Create</button>');
+	createBtn.click(createUser);
+	
+	userServiceClient
+	  .findAllUsers()
+	  .then(renderUsers);
   }
   init();
 
@@ -37,10 +50,6 @@
 	  
   }
   
-  function findAllUsers() {
-	  
-  }
-  
   function selectUser() {
 	  
   }
@@ -48,10 +57,15 @@
   function updateUser(event) {
 	console.log(event);
     var $button = $(event.currentTarget);
-    var id = $button.attr('id');
-
+    
+    var newUser = new User();
+    newUser.setUsername(usernameFld.val());
+    newUser.setPassword(passwordFld.val());
+    newUser.setFirstName(firstNameFld.val());
+    newUser.setLastName(lastNameFld.val());
+    
     userServiceClient
-      .updateUser(id)
+      .updateUser(newUser)
       .then(function () {
         userServiceClient
           .findAllUsers()
@@ -90,6 +104,7 @@
       deleteBtn.click(deleteUser);
       deleteBtn.attr('id', user.id);
       td.append(deleteBtn);
+      
       tr.append(td);
       
       return tr;
