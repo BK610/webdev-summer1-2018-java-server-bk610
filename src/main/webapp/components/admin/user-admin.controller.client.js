@@ -14,10 +14,8 @@
 
     var tbody = $('tbody');
     tbody.empty();
-    for(var i=0; i<users.length; i++) {
-    	
-      renderUser(user[i]);
-      tbody.append(renderUser(user[i]));
+    for(var i=0; i<users.length; i++) {    	
+      tbody.append(renderUser(users[i]));
     }
   }
 
