@@ -3,12 +3,12 @@
   var userServiceClient = new UserServiceClient();
 
   function init() {
-	var usernameFld = $('<th>Username</th>');
-	var passwordFld = $('<th>Password</th>');
-	var firstNameFld = $('<th>First</th>');
-	var lastNameFld = $('<th>Last</th>');
-	var emailFld = $('<th>Email</th>');
-	var roleFld = $('<th>Role</th>');
+	var usernameFld = $('usernameFld');
+	var passwordFld = $('passwordFld');
+	var firstNameFld = $('firstNameFld');
+	var lastNameFld = $('lastNameFld');
+	var emailFld = $('emailFld');
+//	var roleFld = $('<th>Role</th>');
 	
 	var updateBtn = $('<button>Update</button>');
 	updateBtn.click(updateUser);
