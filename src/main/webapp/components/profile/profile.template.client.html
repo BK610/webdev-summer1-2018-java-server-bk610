@@ -1,17 +1,43 @@
-<h1>Profile</h1>
-
-<input placeholder="username" id="username">
-<br/>
-<input id="firstName"/>
-<br/>
-<input id="lastName"/>
-<br/>
-<button id="updateBtn">
-    Update
-</button>
-<script
-        src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
-
-<script src="profile.controller.client.js"></script>
+<html>
+    <head>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+              rel="stylesheet">
+        <link href="../../css/styles.css"
+              rel="stylesheet"/>
+        <title>Registration Page</title>
+    </head>
+    <body>
+	<h1>Profile</h1>
+	
+	<div>
+		<label for="username">
+			Username
+		</label>
+		<input placeholder="bigstudent332" id="username">
+	</div>
+	
+	<div>
+		<label for="firstName">
+			First name
+		</label>
+		<input placeholder="Bailey" id="firstName"/>
+	</div>
+	
+	<div>
+		<label for="lastName">
+			Last name
+		</label>
+		<input placeholder="Kane" id="lastName"/>
+	</div>
+	
+	<button id="updateBtn">
+	    Update
+	</button>
+	<script
+	        src="https://code.jquery.com/jquery-3.3.1.min.js"
+	        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	        crossorigin="anonymous"></script>
+	
+	<script src="profile.controller.client.js"></script>
+	</body>
+</html>
