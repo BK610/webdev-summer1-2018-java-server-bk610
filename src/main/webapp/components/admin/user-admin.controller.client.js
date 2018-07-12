@@ -6,22 +6,14 @@
   var firstNameFld = $('#firstNameFld');
   var lastNameFld = $('#lastNameFld');
   var emailFld = $('#emailFld');
-//	var roleFld = $('<th>Role</th>');
+  var roleFld = $('#roleFld');
 
-  function init() {
-	console.log(usernameFld);
-	console.log(passwordFld);
-	console.log(firstNameFld);
-	console.log(lastNameFld);
-	console.log(emailFld);
-	
+  function init() {	
 	var updateBtn = $('#updateBtn');
 	updateBtn.click(updateUser);
-	console.log(updateBtn);
 	
 	var createBtn = $('#createBtn');
 	createBtn.click(createUser);
-	console.log(createBtn);
 	
 	userServiceClient
 	  .findAllUsers()
@@ -114,11 +106,11 @@
       tr.append(td);
 
       td = $('<td>');
-      td.append('hello@world.com');
+      td.append(user.email);
       tr.append(td);
 
       td = $('<td>');
-      td.append('Student');
+      td.append(user.role);
       tr.append(td);
 
       td = $('<td>');
