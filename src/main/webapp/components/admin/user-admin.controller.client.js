@@ -8,7 +8,7 @@
   var emailFld = $('#emailFld');
 //	var roleFld = $('<th>Role</th>');
 
-  function init() {	
+  function init() {	  
 	userServiceClient
 	  .findAllUsers()
 	  .then(renderUsers);
@@ -17,6 +17,12 @@
 
   function renderUsers(users) {
 	console.log(users);
+	
+	console.log(usernameFld);
+	console.log(passwordFld);
+	console.log(firstNameFld);
+	console.log(lastNameFld);
+	console.log(emailFld);
 	
 	var updateBtn = $('<button>Update</button>');
 	updateBtn.click(updateUser);
