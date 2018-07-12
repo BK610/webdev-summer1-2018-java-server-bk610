@@ -62,11 +62,12 @@
     var $button = $(event.currentTarget);
     
     var newUser = new User();
-    newUser.username(usernameFld.val());
-    newUser.password(passwordFld.val());
-    newUser.firstName(firstNameFld.val());
-    newUser.lastName(lastNameFld.val());
-    newUser.email(emailFld.val());
+    newUser.setUsername(usernameFld.val());
+    newUser.setPassword(passwordFld.val());
+    newUser.setFirstName(firstNameFld.val());
+    newUser.setLastName(lastNameFld.val());
+    newUser.setEmail(emailFld.val());
+    newUser.setRole("Student");
     
     userServiceClient
       .updateUser(newUser)
