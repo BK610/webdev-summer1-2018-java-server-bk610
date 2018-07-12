@@ -53,8 +53,25 @@
       });
   }
   
-  function createUser() {
-	  
+  function createUser(event) {
+    console.log(event);
+    var $button = $(event.currentTarget);
+    
+    var newUser = new User();
+    newUser.setUsername(usernameFld.val());
+    newUser.setPassword(passwordFld.val());
+    newUser.setFirstName(firstNameFld.val());
+    newUser.setLastName(lastNameFld.val());
+    newUser.setEmail(emailFld.val());
+    newUser.setRole("Student");
+    
+    userServiceClient
+      .createUser(newUser)
+      .then(function () {
+        userServiceClient
+          .findAllUsers()
+          .then(renderUsers);
+      });
   }
   
   function updateUser(event) {

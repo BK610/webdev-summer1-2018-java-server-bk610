@@ -27,14 +27,21 @@ function UserServiceClient() {
 	  return fetch(url, {
 		  "method": 'PUT',
 		  "body": JSON.stringify(user),
-		  "content-type": 'application/JSON'})
+		  "content-type": 'application/json'})
 		  .then(function (response) {
 	    	return response.json();
 	    });
   }
   
   function createUser(user) {
-	  //TODO
+	  var url = "/register";
 	  
+	  return fetch(url, {
+		  "method": 'POST',
+		  "body": JSON.stringify(user),
+		  "content-type": 'application/json'})
+		  .then(function (response) {
+	    	return response.json();
+	    });
   }
 }
