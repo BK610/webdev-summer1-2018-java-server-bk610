@@ -43,7 +43,7 @@
       tr.append(td);
 
       td = $('<td>');
-      var deleteBtn = $('<button>DELETE</button>');
+      var deleteBtn = $('<button>Delete</button>');
       deleteBtn.click(deleteUser);
       deleteBtn.attr('id', user.id);
       td.append(deleteBtn);
