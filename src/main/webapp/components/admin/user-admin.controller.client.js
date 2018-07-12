@@ -55,7 +55,7 @@
     newUser.setFirstName(firstNameFld.val());
     newUser.setLastName(lastNameFld.val());
     newUser.setEmail(emailFld.val());
-    newUser.setRole("Student");
+    newUser.setRole(roleFld.val());
     
     userServiceClient
       .createUser(newUser)
@@ -76,7 +76,7 @@
     newUser.setFirstName(firstNameFld.val());
     newUser.setLastName(lastNameFld.val());
     newUser.setEmail(emailFld.val());
-    newUser.setRole("Student");
+    newUser.setRole(roleFld.val());
     
     userServiceClient
       .updateUser(newUser)
