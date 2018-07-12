@@ -120,9 +120,7 @@
       deleteBtn.click(deleteUser);
       deleteBtn.attr('id', user.id);
       td.append(deleteBtn);
-      tr.append(td);
       
-      td = $('<td>');
       var updateBtn = $('<button class=\'btn btn-primary\'>Update</button>');
       updateBtn.click(updateUser);
       updateBtn.attr('id', user.id);
