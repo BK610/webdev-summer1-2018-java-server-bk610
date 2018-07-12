@@ -27,7 +27,7 @@ function UserServiceClient() {
 	  return fetch(url, {
 		  "method": 'PUT',
 		  "body": JSON.stringify(user),
-		  "headers": "{'Content-Type': 'application/json'}"})
+		  "headers": {'Content-Type': 'application/json'}})
 		  .then(function (response) {
 	    	return response.json();
 	    });
