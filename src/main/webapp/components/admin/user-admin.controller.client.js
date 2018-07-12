@@ -116,9 +116,6 @@
       td = $('<td>');
       td.append(user.role);
       tr.append(td);
-      console.log("ROLE:");
-      console.log(user.role);
-      console.log("END ROLE.");
 
       td = $('<td>');
       var deleteBtn = $('<button class=\'btn btn-primary\'>Delete</button>');
