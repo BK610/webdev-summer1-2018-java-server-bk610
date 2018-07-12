@@ -70,6 +70,8 @@
     newUser.setPassword(passwordFld.val());
     newUser.setFirstName(firstNameFld.val());
     newUser.setLastName(lastNameFld.val());
+    newUser.setEmail(emailFld.val());
+    newUser.setRole("Student");
     
     userServiceClient
       .updateUser(newUser)
