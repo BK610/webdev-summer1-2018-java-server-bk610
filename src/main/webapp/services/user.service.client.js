@@ -21,8 +21,8 @@ function UserServiceClient() {
       });
   }
 
-  function updateUser(user) {
-	  var url = "/api/user/" + user.id;
+  function updateUser(id, user) {
+	  var url = "/api/user/" + id;
 	  
 	  return fetch(url, {
 		  "method": 'PUT',

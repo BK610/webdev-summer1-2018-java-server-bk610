@@ -9,9 +9,6 @@
   var roleFld = $('#roleFld');
 
   function init() {	
-	var updateBtn = $('#updateBtn');
-	updateBtn.click(updateUser);
-	
 	var createBtn = $('#createBtn');
 	createBtn.click(createUser);
 	
@@ -71,6 +68,7 @@
   function updateUser(event) {
 	console.log(event);
     var $button = $(event.currentTarget);
+    var id = $button.attr('id');
     
     var newUser = new User();
     newUser.setUsername(usernameFld.val());
@@ -83,7 +81,7 @@
     emptyFields();
     
     userServiceClient
-      .updateUser(newUser)
+      .updateUser(id, newUser)
       .then(function () {
         userServiceClient
           .findAllUsers()
@@ -116,16 +114,19 @@
       td = $('<td>');
       td.append(user.role);
       tr.append(td);
-      console.log("ROLE:");
-      console.log(user.role);
-      console.log("END ROLE.");
 
       td = $('<td>');
       var deleteBtn = $('<button class=\'btn btn-primary\'>Delete</button>');
       deleteBtn.click(deleteUser);
       deleteBtn.attr('id', user.id);
       td.append(deleteBtn);
+      tr.append(td);
       
+      td = ${'<td>'};
+      var updateBtn = $('<button class=\'btn btn-primary\'>Update</button>');
+      updateBtn.click(updateUser);
+      updateBtn.attr('id', user.id);
+      td.append(updateBtn);
       tr.append(td);
       
       return tr;
