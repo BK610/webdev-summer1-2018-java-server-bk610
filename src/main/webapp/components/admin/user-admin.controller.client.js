@@ -104,6 +104,7 @@
       var deleteBtn = $('<button>DELETE</button>');
       deleteBtn.click(deleteUser);
       deleteBtn.attr('id', user.id);
+      console.log(deleteBtn);
       td.append(deleteBtn);
       
       tr.append(td);
