@@ -57,6 +57,8 @@
     newUser.setEmail(emailFld.val());
     newUser.setRole(roleFld.val());
     
+    emptyFields();
+    
     userServiceClient
       .createUser(newUser)
       .then(function () {
@@ -77,6 +79,8 @@
     newUser.setLastName(lastNameFld.val());
     newUser.setEmail(emailFld.val());
     newUser.setRole(roleFld.val());
+    
+    emptyFields();
     
     userServiceClient
       .updateUser(newUser)
@@ -112,17 +116,27 @@
       td = $('<td>');
       td.append(user.role);
       tr.append(td);
+      console.log("ROLE:");
       console.log(user.role);
+      console.log("END ROLE.");
 
       td = $('<td>');
       var deleteBtn = $('<button>Delete</button>');
       deleteBtn.click(deleteUser);
       deleteBtn.attr('id', user.id);
-      console.log(deleteBtn);
       td.append(deleteBtn);
       
       tr.append(td);
       
       return tr;
+  }
+  
+  function emptyFields() {
+      usernameFld.val('');
+      passwordFld.val('');
+      firstNameFld.val('');
+      lastNameFld.val('');
+      emailFld.val('');
+      roleFld.val('FACULTY');
   }
 })();
