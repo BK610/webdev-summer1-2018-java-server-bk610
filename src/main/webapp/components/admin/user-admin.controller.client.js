@@ -100,7 +100,7 @@
   }
   
   function renderUser(user) {
-	  var tr = $('<tr class=\'row\'>');
+	  var tr = $('<tr>');
       var td = $('<td class=\'username\'>');
       td.append(user.username);
       tr.append(td);
