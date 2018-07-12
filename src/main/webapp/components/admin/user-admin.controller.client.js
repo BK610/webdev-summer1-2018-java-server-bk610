@@ -121,7 +121,7 @@
       console.log("END ROLE.");
 
       td = $('<td>');
-      var deleteBtn = $('<button>Delete</button>');
+      var deleteBtn = $('<button class=\'btn btn-primary\'>Delete</button>');
       deleteBtn.click(deleteUser);
       deleteBtn.attr('id', user.id);
       td.append(deleteBtn);
