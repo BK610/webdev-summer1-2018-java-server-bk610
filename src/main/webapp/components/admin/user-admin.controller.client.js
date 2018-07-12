@@ -57,6 +57,8 @@
     newUser.setEmail(emailFld.val());
     newUser.setRole(roleFld.val());
     
+    emptyFields();
+    
     userServiceClient
       .createUser(newUser)
       .then(function () {
@@ -77,6 +79,8 @@
     newUser.setLastName(lastNameFld.val());
     newUser.setEmail(emailFld.val());
     newUser.setRole(roleFld.val());
+    
+    emptyFields();
     
     userServiceClient
       .updateUser(newUser)
@@ -125,5 +129,14 @@
       tr.append(td);
       
       return tr;
+  }
+  
+  function emptyFields() {
+      usernameFld.val('');
+      passwordFld.val('');
+      firstNameFld.val('');
+      lastNameFld.val('');
+      emailFld.val('');
+      roleFld.val('FACULTY');
   }
 })();
