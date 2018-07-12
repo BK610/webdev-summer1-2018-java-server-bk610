@@ -24,11 +24,11 @@
 	console.log(lastNameFld);
 	console.log(emailFld);
 	
-	var updateBtn = $('<button>Update</button>');
+	var updateBtn = $('#<button>Update</button>');
 	updateBtn.click(updateUser);
 	console.log(updateBtn);
 	
-	var createBtn = $('<button>Create</button>');
+	var createBtn = $('#<button>Create</button>');
 	createBtn.click(createUser);
 	console.log(createBtn);
 
