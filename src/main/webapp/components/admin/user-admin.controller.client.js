@@ -8,14 +8,7 @@
   var emailFld = $('emailFld');
 //	var roleFld = $('<th>Role</th>');
 
-  function init() {
-	
-	var updateBtn = $('<button>Update</button>');
-	updateBtn.click(updateUser);
-	
-	var createBtn = $('<button>Create</button>');
-	createBtn.click(createUser);
-	
+  function init() {	
 	userServiceClient
 	  .findAllUsers()
 	  .then(renderUsers);
@@ -23,7 +16,15 @@
   init();
 
   function renderUsers(users) {
-    console.log(users);
+	console.log(users);
+	
+	var updateBtn = $('<button>Update</button>');
+	updateBtn.click(updateUser);
+	console.log(updateBtn);
+	
+	var createBtn = $('<button>Create</button>');
+	createBtn.click(createUser);
+	console.log(createBtn);
 
     var tbody = $('tbody');
     tbody.empty();
