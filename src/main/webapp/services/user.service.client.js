@@ -9,7 +9,7 @@ function UserServiceClient() {
     var url = "/api/user/" + id;
 
     return fetch(url, {
-      "method": 'DELETE'
+      "method": "DELETE"
     })
   }
 
@@ -27,7 +27,7 @@ function UserServiceClient() {
 	  return fetch(url, {
 		  "method": 'PUT',
 		  "body": JSON.stringify(user),
-		  "content-type": 'application/json'})
+		  "headers": "{'Content-Type': 'application/json'}"})
 		  .then(function (response) {
 	    	return response.json();
 	    });
@@ -37,9 +37,9 @@ function UserServiceClient() {
 	  var url = "/register";
 	  
 	  return fetch(url, {
-		  "method": 'POST',
+		  "method": "POST",
 		  "body": JSON.stringify(user),
-		  "content-type": 'application/json'})
+		  "content-type": "application/json"})
 		  .then(function (response) {
 	    	return response.json();
 	    });
