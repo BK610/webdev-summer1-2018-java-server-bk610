@@ -8,7 +8,21 @@
   var emailFld = $('#emailFld');
 //	var roleFld = $('<th>Role</th>');
 
-  function init() {	  
+  function init() {
+	console.log(usernameFld);
+	console.log(passwordFld);
+	console.log(firstNameFld);
+	console.log(lastNameFld);
+	console.log(emailFld);
+	
+	var updateBtn = $('#updateBtn');
+	updateBtn.click(updateUser);
+	console.log(updateBtn);
+	
+	var createBtn = $('#createBtn');
+	createBtn.click(createUser);
+	console.log(createBtn);
+	
 	userServiceClient
 	  .findAllUsers()
 	  .then(renderUsers);
@@ -17,20 +31,6 @@
 
   function renderUsers(users) {
 	console.log(users);
-	
-	console.log(usernameFld);
-	console.log(passwordFld);
-	console.log(firstNameFld);
-	console.log(lastNameFld);
-	console.log(emailFld);
-	
-	var updateBtn = $('#<button>Update</button>');
-	updateBtn.click(updateUser);
-	console.log(updateBtn);
-	
-	var createBtn = $('#<button>Create</button>');
-	createBtn.click(createUser);
-	console.log(createBtn);
 
     var tbody = $('tbody');
     tbody.empty();
