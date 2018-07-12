@@ -112,6 +112,7 @@
       td = $('<td>');
       td.append(user.role);
       tr.append(td);
+      console.log(user.role);
 
       td = $('<td>');
       var deleteBtn = $('<button>Delete</button>');
