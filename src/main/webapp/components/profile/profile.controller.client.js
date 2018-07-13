@@ -21,33 +21,33 @@
       updateBtn = $("#updateBtn");
       updateBtn.click(updateUser);
       
-      profile()
-      .then(renderUser);
+      userServiceClient.profile()
+      	.then(renderUser);
   }
   init();
   
   function updateUser() {
-    var user = {
-      firstName: $firstName.val(),
-      lastName: $lastName.val()
-    };
-
-    fetch("/api/user/" + currentUser.id, {
-      method: 'put',
-      body: JSON.stringify(user),
-      'credentials': 'include',
-      headers: {
-        'content-type': 'application/json'
-      }
-    });
+	  var newUser = new User();
+	  newUser.setUsername(usernameFld.val());
+	  newUser.setPassword(passwordFld.val());
+	  newUser.setFirstName(firstNameFld.val());
+	  newUser.setLastName(lastNameFld.val());
+	  newUser.setEmail(emailFld.val());
+	  newUser.setRole(roleFld.val());
+	  
+	  userServiceClient
+      	.updateUser(currentUser.id, newUser)
+      	.then(renderUser);
   }
 
   function renderUser(user) {
     currentUser = user;
     usernameFld.val(user.username);
+    passwordFld.val('****');
     firstNameFld.val(user.firstName);
     lastNameFld.val(user.lastName);
-    
+    emailFld.val(user.email);
+    roleFld.val(user.role);
   }
 
   function profile() {
@@ -57,16 +57,5 @@
     .then(function (response) {
       return response.json();
     });
-  }
-
-  function findUserById(userId) {
-    return fetch('/api/user/' + userId)
-      .then(function (response) {
-        return response.json();
-      });
-  }
-  
-  function handleResponse() {
-    
   }
 })();

@@ -5,6 +5,7 @@ function UserServiceClient() {
   this.updateUser   = updateUser;
   this.createUser   = createUser;
   this.login        = login;
+  this.profile      = profile;
 
   function deleteUser(id) {
     var url = "/api/user/" + id;
@@ -60,5 +61,14 @@ function UserServiceClient() {
 	    		  return response.json();
 	    	  }
 	      });
+  }
+  
+  function profile() {
+	  return fetch('/profile', {
+	      'credentials': 'include'
+	    })
+	    .then(function (response) {
+	      return response.json();
+	    })
   }
 }
