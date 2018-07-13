@@ -92,7 +92,15 @@
         userServiceClient
           .updateUser(id, newUser)
           .then(function () {
-            userServiceClient
+            userServiceClientlds();
+    	    
+    	    userServiceClient
+    	      .createUser(newUser)
+    	      .then(function () {
+    	        userServiceClient
+    	          .findAllUsers()
+    	          .then(renderUsers);
+    	      });
               .findAllUsers()
               .then(renderUsers);
           });
@@ -103,10 +111,8 @@
     		this.contentEditable = true;
     	});
     	
-    	row.find('.buttons').each(function () {
-    		contentEditable = false;
-    	});
-    	
+    	$button.parent.contentEditable = false;
+    	    	
     	$button.html('Submit');
     }
   }
