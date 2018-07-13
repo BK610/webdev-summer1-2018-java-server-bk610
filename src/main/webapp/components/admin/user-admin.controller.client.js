@@ -77,26 +77,25 @@
 	console.log(event);
 	console.log("HELLO!!!!!!!");
 	console.log(row);
-    var $button = $(event.currentTarget);
-    var row = $button.parent().parent();
+    var updateButton = $(event.currentTarget);
+    var row = updateButton.parent().parent();
     console.log(row);
-    console.log($button.parent());
+    console.log(updateButton.parent());
     console.log($('.username').html();
     console.log(row.find($('.username')).html());
     console.log(row.find('.username').html());
-    console.log(row.find('username').html());
     
     if (inEdit) {
     	inEdit = false;
     	
-    	var id = $button.attr('id');
+    	var id = updateButton.attr('id');
     	var newUser = new User();
-        newUser.setUsername(row.find($('.username')).html());
-        newUser.setPassword(row.find($('.password')).html());
-        newUser.setFirstName(row.find($('.firstName')).html());
-        newUser.setLastName(row.find($('.lastName')).html());
-        newUser.setEmail(row.find($('.email')).html());
-        newUser.setRole(row.find($('.role')).html());
+        newUser.setUsername(row.find('.username').html());
+        newUser.setPassword(row.find('.password').html());
+        newUser.setFirstName(row.find('.firstName').html());
+        newUser.setLastName(row.find('.lastName').html());
+        newUser.setEmail(row.find('.email').html());
+        newUser.setRole(row.find('.role').html());
         
         userServiceClient
           .updateUser(id, newUser)
@@ -112,9 +111,9 @@
     		this.contentEditable = true;
     	});
     	
-    	$button.parent.contentEditable = false;
+    	updateButton.parent.contentEditable = false;
     	    	
-    	$button.html('Submit');
+    	updateButton.html('Submit');
     }
   }
   
