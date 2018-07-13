@@ -56,7 +56,9 @@ function UserServiceClient() {
 	      headers: {
 	        'content-type': 'application/json'}})
 	      .then(function (response) {
-	    	  return response.json();
+	    	  if (response.ok) {
+	    		  return response.json();
+	    	  }
 	      });
   }
 }

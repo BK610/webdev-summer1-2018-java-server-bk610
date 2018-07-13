@@ -46,7 +46,7 @@ public class UserService {
 			user = maybeUser.get();
 			session.setAttribute("currentUser", user);
 		} else {
-			user = null;
+			user.setUsername(null);
 		}
 		return user;
 	}
@@ -62,16 +62,16 @@ public class UserService {
 			if (newUser.getUsername() != null && newUser.getUsername() != "") {
 				user.setUsername(newUser.getUsername());
 			}
-			if (newUser.getUsername() != null && newUser.getUsername() != "") {
+			if (newUser.getPassword() != null && newUser.getPassword() != "") {
 				user.setPassword(newUser.getPassword());
 			}
-			if (newUser.getUsername() != null && newUser.getUsername() != "") {
+			if (newUser.getFirstName() != null && newUser.getFirstName() != "") {
 				user.setFirstName(newUser.getFirstName());
 			}
-			if (newUser.getUsername() != null && newUser.getUsername() != "") {
+			if (newUser.getLastName() != null && newUser.getLastName() != "") {
 				user.setLastName(newUser.getLastName());				
 			}
-			if (newUser.getUsername() != null && newUser.getUsername() != "") {
+			if (newUser.getEmail() != null && newUser.getEmail() != "") {
 				user.setEmail(newUser.getEmail());
 			}
 			return userRepository.save(user);
