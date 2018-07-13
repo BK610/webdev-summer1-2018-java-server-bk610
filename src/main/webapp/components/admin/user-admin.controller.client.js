@@ -99,7 +99,10 @@
     		this.contentEditable = true;
     	});
     	
-    	row.find('.buttons').contentEditable = false;
+    	row.find('.buttons').each(function () {
+    		contentEditable = false;
+    	});
+    	
     	$button.html('Submit');
     }
   }
