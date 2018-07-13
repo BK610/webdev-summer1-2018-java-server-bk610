@@ -56,6 +56,7 @@ function UserServiceClient() {
 	      headers: {
 	        'content-type': 'application/json'}})
 	      .then(function (response) {
+	    	  console.log("Login json response: " + response.json());
 	    	  return response.json();
 	      });
   }

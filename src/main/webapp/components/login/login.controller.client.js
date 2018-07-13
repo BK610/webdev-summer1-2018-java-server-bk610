@@ -27,6 +27,7 @@
   }
 
   function navigateToProfile() {
-    window.location.href = '/components/profile/profile.template.client.html';
+	  console.log("Navigating a la profile");
+	  window.location.href = '/components/profile/profile.template.client.html';
   }
 })();
