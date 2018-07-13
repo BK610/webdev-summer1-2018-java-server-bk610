@@ -92,17 +92,10 @@
         userServiceClient
           .updateUser(id, newUser)
           .then(function () {
-            userServiceClientlds();
-    	    
-    	    userServiceClient
-    	      .createUser(newUser)
-    	      .then(function () {
     	        userServiceClient
     	          .findAllUsers()
     	          .then(renderUsers);
     	      });
-              .findAllUsers()
-              .then(renderUsers);
           });
     } else {
     	inEdit = true;
