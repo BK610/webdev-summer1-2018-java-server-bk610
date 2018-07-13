@@ -96,7 +96,6 @@
     	          .findAllUsers()
     	          .then(renderUsers);
     	      });
-          });
     } else {
     	inEdit = true;
     	
