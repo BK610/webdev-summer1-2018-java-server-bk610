@@ -19,7 +19,7 @@
     	alert('Passwords must match.');
     } else if (usernameStr === "") {
     	alert('Please specify username.');
-    } else if (passwordStr === "" or password2Str === "") {
+    } else if (passwordStr === "" || password2Str === "") {
     	alert('Please specify both passwords.');
     } else {
     	var userObj = {
