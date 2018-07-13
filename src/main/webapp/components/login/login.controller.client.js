@@ -19,15 +19,11 @@
 	  newUser.setUsername(usernameFld.val());
 	  newUser.setPassword(passwordFld.val());
 	  
-	  var successfulLogin = userServiceClient.login(newUser);
-	  
-	  console.log("login is: " + successfulLogin);
-	  
-	  if (successfulLogin) {
-		  navigateToProfile();
-	  } else {
-		  alert('Unsuccessful login.');
-	  }
+	  userServiceClient.login(newUser)
+	  	.then(navigateToProfile,
+	  			function () {
+	  				alert('Unsuccessful login.');
+	  			});
   }
 
   function navigateToProfile() {
