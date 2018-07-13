@@ -31,7 +31,6 @@
 
   function deleteUser(event) {
     console.log(event);
-    console.log("HELLO??");
     inEdit = false;
     var $button = $(event.currentTarget);
     var id = $button.attr('id');
@@ -75,7 +74,6 @@
   
   function updateUser(event) {
 	console.log(event);
-	console.log("Fixed");
     var updateButton = $(event.currentTarget);
     var row = updateButton.parent().parent();
     
