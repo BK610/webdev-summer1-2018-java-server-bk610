@@ -1,11 +1,12 @@
 (function () {
-  var $username,
-    $password,
+  var usernameFld,
+  	passwordFld,
     $loginBtn;
+  var userServiceClient = new UserServiceClient();
   
   function init() {
-    $username = $('#username');
-    $password = $('#password');
+	  usernameFld = $('#username');
+	  passwordFld = $('#password');
     $loginBtn = $('#loginBtn');
     
     $loginBtn.click(login);
@@ -13,18 +14,17 @@
   init();
   
   function login() {
-    var user = {
-      'username': $username.val(),
-      "password": $password.val()
-    };
-    fetch('/login', {
-      method: 'post',
-      body: JSON.stringify(user),
-      credentials: 'include',
-      headers: {
-        'content-type': 'application/json'
-      }
-    }).then(navigateToProfile);
+	  var newUser = new User()
+	  newUser.setUsername(usernameFld.val());
+	  newUser.setPassword(passwordFld.val());
+	  
+	  var successfulLogin = userServiceClient.login(newUser);
+	  
+	  if (successfulLogin) {
+		  navigateToProfile();
+	  } else {
+		  alert('Unsuccessful login.');
+	  }
   }
 
   function navigateToProfile() {
