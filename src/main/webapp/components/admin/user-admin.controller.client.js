@@ -74,6 +74,8 @@
   
   function updateUser(event) {
 	console.log(event);
+	console.log(row);
+	console.log("HELLO!!!!!!!");
     var $button = $(event.currentTarget);
     var row = $button.parent().parent();
     console.log(row);
