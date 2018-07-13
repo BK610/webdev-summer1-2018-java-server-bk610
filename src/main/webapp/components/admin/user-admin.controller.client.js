@@ -75,6 +75,7 @@
   
   function updateUser(event) {
 	console.log(event);
+	console.log("Fixed");
     var updateButton = $(event.currentTarget);
     var row = updateButton.parent().parent();
     
