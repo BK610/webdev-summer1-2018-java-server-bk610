@@ -12,7 +12,7 @@
   function init() {	
 	var createBtn = $('#createBtn');
 	createBtn.click(createUser);
-	
+	console.log(createBtn);
 	userServiceClient
 	  .findAllUsers()
 	  .then(renderUsers);
