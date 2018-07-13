@@ -13,12 +13,15 @@
   }
   init();
   
-  function login() {
+  function login(event) {
+	  console.log(event);
 	  var newUser = new User()
 	  newUser.setUsername(usernameFld.val());
 	  newUser.setPassword(passwordFld.val());
 	  
 	  var successfulLogin = userServiceClient.login(newUser);
+	  
+	  console.log("login is: " + successfulLogin);
 	  
 	  if (successfulLogin) {
 		  navigateToProfile();
