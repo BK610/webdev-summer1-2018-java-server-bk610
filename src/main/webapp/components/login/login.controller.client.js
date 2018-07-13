@@ -1,12 +1,14 @@
 (function () {
   var userServiceClient = new UserServiceClient();
-  var usernameFld = $('#username');
-  var passwordFld = $('#password');
-  var loginBtn = $('#loginBtn');
+  var usernameFld;
+  var passwordFld;
+  var loginBtn;
   
   function init() {
 	  console.log("Login init.");
-
+	  usernameFld = $('#username');
+	  passwordFld = $('#password');
+	  loginBtn = $('#loginBtn');
 	  console.log(loginBtn);
 	  loginBtn.click(login);
 	  console.log("finished?");
