@@ -75,15 +75,8 @@
   
   function updateUser(event) {
 	console.log(event);
-	console.log("HELLO!!!!!!!");
-	console.log(row);
     var updateButton = $(event.currentTarget);
     var row = updateButton.parent().parent();
-    console.log(row);
-    console.log(updateButton.parent());
-    console.log($('.username').html();
-    console.log(row.find($('.username')).html());
-    console.log(row.find('.username').html());
     
     if (inEdit) {
     	inEdit = false;
