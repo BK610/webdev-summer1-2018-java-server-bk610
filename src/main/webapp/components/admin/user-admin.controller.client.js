@@ -72,6 +72,12 @@
     var row = $button.parent().parent();
     
     if (inEdit) {
+    	inEdit = false;
+    	
+    	console.log($('.username').val());
+    	console.log(row.find('.username').val());
+    	console.log(row.find('.username').html());
+    	
     	var id = $button.attr('id');
     	var newUser = new User();
         newUser.setUsername($('.username').val());
