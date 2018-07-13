@@ -16,7 +16,7 @@
 	  firstNameFld = $("#firstName");
 	  lastNameFld = $("#lastName");
 	  emailFld = $('#email');
-	  roleFld = $('#email');
+	  roleFld = $('#roleFld');
 	  
       updateBtn = $("#updateBtn");
       updateBtn.click(updateUser);
