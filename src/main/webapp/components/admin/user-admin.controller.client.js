@@ -21,9 +21,9 @@
 
   function renderUsers(users) {
 	console.log(users);
-
     var tbody = $('tbody');
     tbody.empty();
+    
     for(var i=0; i<users.length; i++) {    	
       tbody.append(renderUser(users[i]));
     }
@@ -82,7 +82,7 @@
     	
     	var id = $button.attr('id');
     	var newUser = new User();
-        newUser.setUsername($('.username').html());
+        newUser.setUsername(row.find($('.username')).html());
         newUser.setPassword($('.password').html());
         newUser.setFirstName($('.firstName').html());
         newUser.setLastName($('.lastName').html());
