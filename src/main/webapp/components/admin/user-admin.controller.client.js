@@ -80,6 +80,8 @@
     console.log($button.parent());
     console.log($('.username').html();
     console.log(row.find($('.username')).html());
+    console.log(row.find('.username').html());
+    console.log(row.find('username').html());
     
     if (inEdit) {
     	inEdit = false;
