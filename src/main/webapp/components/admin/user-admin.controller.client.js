@@ -80,12 +80,12 @@
     	
     	var id = $button.attr('id');
     	var newUser = new User();
-        newUser.setUsername($('.username').val());
-        newUser.setPassword($('.password').val());
-        newUser.setFirstName($('.firstName').val());
-        newUser.setLastName($('.lastName').val());
-        newUser.setEmail($('.email').val());
-        newUser.setRole($('.role').val());
+        newUser.setUsername($('.username').html());
+        newUser.setPassword($('.password').html());
+        newUser.setFirstName($('.firstName').html());
+        newUser.setLastName($('.lastName').html());
+        newUser.setEmail($('.email').html());
+        newUser.setRole($('.role').html());
         
         userServiceClient
           .updateUser(id, newUser)
