@@ -57,15 +57,19 @@
     newUser.setEmail(emailFld.val());
     newUser.setRole(roleFld.val());
     
-    emptyFields();
-    
-    userServiceClient
-      .createUser(newUser)
-      .then(function () {
-        userServiceClient
-          .findAllUsers()
-          .then(renderUsers);
-      });
+    if (usernameFld.val() === "" || passwordFld.val() === "") {
+    	alert("Username and Password are required fields.");
+    } else {
+	    emptyFields();
+	    
+	    userServiceClient
+	      .createUser(newUser)
+	      .then(function () {
+	        userServiceClient
+	          .findAllUsers()
+	          .then(renderUsers);
+	      });
+    }
   }
   
   function updateUser(event) {
