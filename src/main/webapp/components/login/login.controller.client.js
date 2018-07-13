@@ -5,13 +5,13 @@
   var userServiceClient = new UserServiceClient();
   
   function init() {
-    loginBtn.click(login);
-    console.log(loginBtn);
+	  console.log(loginBtn);
+	  loginBtn.click(login);
   }
   init();
   
-  function login(event) {
-	  console.log(event);
+  function login() {
+//	  console.log(event);
 	  var newUser = new User()
 	  newUser.setUsername(usernameFld.val());
 	  newUser.setPassword(passwordFld.val());
