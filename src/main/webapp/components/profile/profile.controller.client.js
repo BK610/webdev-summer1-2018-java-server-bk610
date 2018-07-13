@@ -1,46 +1,53 @@
 (function () {
-
-  var $username, $firstName, $lastName,
-    $updateBtn;
-  var currentUser = null;
+	var userServiceClient = new UserServiceClient();
+	var usernameFld;
+	var passwordFld;
+	var firstNameFld;
+	var lastNameFld;
+	var emailFld;
+	var roleFld;
+	
+	var updateBtn;
+	var currentUser = null;
 
   function init() {
-
-    $username = $("#username");
-    $firstName = $("#firstName");
-    $lastName = $("#lastName");
-    $updateBtn = $("#updateBtn");
-
-    $updateBtn.click(updateUser);
-
-    // findUserById(7)
-    //   .then(renderUser)
-    profile()
-      .then(renderUser);
+	  usernameFld = $("#username");
+	  passwordFld = $('#password');
+	  firstNameFld = $("#firstName");
+	  lastNameFld = $("#lastName");
+	  emailFld = $('#email');
+	  roleFld = $('#roleFld');
+	  
+      updateBtn = $("#updateBtn");
+      updateBtn.click(updateUser);
+      
+      userServiceClient.profile()
+      	.then(renderUser);
   }
   init();
   
   function updateUser() {
-    var user = {
-      firstName: $firstName.val(),
-      lastName: $lastName.val()
-    };
-
-    fetch("/api/user/" + currentUser.id, {
-      method: 'put',
-      body: JSON.stringify(user),
-      'credentials': 'include',
-      headers: {
-        'content-type': 'application/json'
-      }
-    });
+	  var newUser = new User();
+	  newUser.setUsername(usernameFld.val());
+	  newUser.setPassword(passwordFld.val());
+	  newUser.setFirstName(firstNameFld.val());
+	  newUser.setLastName(lastNameFld.val());
+	  newUser.setEmail(emailFld.val());
+	  newUser.setRole(roleFld.val());
+	  
+	  userServiceClient
+      	.updateUser(currentUser.id, newUser)
+      	.then(renderUser);
   }
 
   function renderUser(user) {
     currentUser = user;
-    $username.val(user.username);
-    $firstName.val(user.firstName);
-    $lastName.val(user.lastName);
+    usernameFld.val(user.username);
+    passwordFld.val('****');
+    firstNameFld.val(user.firstName);
+    lastNameFld.val(user.lastName);
+    emailFld.val(user.email);
+    roleFld.val(user.role);
   }
 
   function profile() {
@@ -50,16 +57,5 @@
     .then(function (response) {
       return response.json();
     });
-  }
-
-  function findUserById(userId) {
-    return fetch('/api/user/' + userId)
-      .then(function (response) {
-        return response.json();
-      });
-  }
-  
-  function handleResponse() {
-    
   }
 })();

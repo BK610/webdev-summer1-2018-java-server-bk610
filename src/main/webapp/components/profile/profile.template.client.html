@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
     <head>
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
@@ -7,47 +8,84 @@
         <title>Registration Page</title>
     </head>
     <body>
-		<h1>Profile</h1>
-		
-		<div>
-			<label for="username">
-				Username
-			</label>
-			<input type="text"
-				   class="form-control wbdv"
-			       placeholder="bigstudent332"
-				   id="username">
+    	<div class="container-fluid">
+			<h1>Profile</h1>
+			
+			<div>
+				<label for="username">
+					Username
+				</label>
+				<input type="text"
+					   class="form-control wbdv"
+				       placeholder="bigstudent332"
+					   id="username">
+			</div>
+			
+			 <div>
+		        <label for="password">
+		            Password
+		        </label>
+		        <input type="password"
+		               class="form-control wbdv"
+		               placeholder="1234qwerasdf"
+		               id="password"/>
+		    </div>
+			
+			<div>
+				<label for="firstName">
+					First Name
+				</label>
+				<input type="text"
+					   class="form-control wbdv"
+					   placeholder="Bailey"
+					   id="firstName"/>
+			</div>
+			
+			<div>
+				<label for="lastName">
+					Last Name
+				</label>
+				<input type="text"
+					   class="form-control wbdv"
+					   placeholder="Kane"
+					   id="lastName"/>
+			</div>
+			
+			<div>
+				<label for="email">
+					Email
+				</label>
+				<input type="text"
+					   class="form-control wbdv"
+					   placeholder="bigKahun3@rocketmail.com"
+					   id="email"/>
+			</div>
+			
+			<div>
+				<label for="roleFld">
+					Role
+				</label>
+				<select id='roleFld'>
+                    <option value="FACULTY">
+                        Faculty
+                    </option>
+                    <option value="STUDENT">
+                        Student
+                    </option>
+                </select>
+			</div>
+			
+			<button class="btn btn-success"
+					id="updateBtn">
+			    Update
+			</button>
+			<script
+			        src="https://code.jquery.com/jquery-3.3.1.min.js"
+			        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			        crossorigin="anonymous"></script>
+			<script src="../../models/user.model.client.js"></script>
+			<script src="../../services/user.service.client.js"></script>
+			<script src="profile.controller.client.js"></script>
 		</div>
-		
-		<div>
-			<label for="firstName">
-				First name
-			</label>
-			<input type="text"
-				   class="form-control wbdv"
-				   placeholder="Bailey"
-				   id="firstName"/>
-		</div>
-		
-		<div>
-			<label for="lastName">
-				Last name
-			</label>
-			<input type="text"
-				   class="form-control wbdv"
-				   placeholder="Kane"
-				   id="lastName"/>
-		</div>
-		
-		<button class="btn btn-success"
-				id="updateBtn">
-		    Update
-		</button>
-		<script
-		        src="https://code.jquery.com/jquery-3.3.1.min.js"
-		        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-		        crossorigin="anonymous"></script>
-		
-		<script src="profile.controller.client.js"></script>
 	</body>
 </html>

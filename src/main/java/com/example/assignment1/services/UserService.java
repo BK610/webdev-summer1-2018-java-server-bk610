@@ -41,8 +41,13 @@ public class UserService {
 	
 	@PostMapping("/login")
 	public User login(@RequestBody User user, HttpSession session) {
-		user = userRepository.findUserByCredentials(user.getUsername(), user.getPassword());
-		session.setAttribute("currentUser", user);
+		Optional<User> maybeUser = userRepository.findUserByCredentials(user.getUsername(), user.getPassword());
+		if (maybeUser.isPresent()) {
+			user = maybeUser.get();
+			session.setAttribute("currentUser", user);
+		} else {
+			user.setUsername(null);
+		}
 		return user;
 	}
 
@@ -54,11 +59,21 @@ public class UserService {
 		Optional<User> optional = userRepository.findById(id);
 		if(optional.isPresent()) {
 			User user = optional.get();
-			user.setUsername(newUser.getUsername());
-			user.setPassword(newUser.getPassword());
-			user.setFirstName(newUser.getFirstName());
-			user.setLastName(newUser.getLastName());
-			user.setEmail(newUser.getEmail());
+			if (newUser.getUsername() != null && newUser.getUsername() != "") {
+				user.setUsername(newUser.getUsername());
+			}
+			if (newUser.getPassword() != null && newUser.getPassword() != "") {
+				user.setPassword(newUser.getPassword());
+			}
+			if (newUser.getFirstName() != null && newUser.getFirstName() != "") {
+				user.setFirstName(newUser.getFirstName());
+			}
+			if (newUser.getLastName() != null && newUser.getLastName() != "") {
+				user.setLastName(newUser.getLastName());				
+			}
+			if (newUser.getEmail() != null && newUser.getEmail() != "") {
+				user.setEmail(newUser.getEmail());
+			}
 			return userRepository.save(user);
 		}
 		return null;
