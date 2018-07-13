@@ -74,10 +74,6 @@
     if (inEdit) {
     	inEdit = false;
     	
-    	console.log($('.username').val());
-    	console.log(row.find('.username').val());
-    	console.log(row.find('.username').html());
-    	
     	var id = $button.attr('id');
     	var newUser = new User();
         newUser.setUsername($('.username').html());
@@ -101,7 +97,8 @@
     		this.contentEditable = true;
     	});
     	
-    	$button.val('Submit');
+    	row.find('.buttons').contentEditable = false;
+    	$button.html('Submit');
     }
   }
   
