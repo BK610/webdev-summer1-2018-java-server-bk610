@@ -1,6 +1,6 @@
 (function () {
   var usernameFld = $('#username');
-  var passwordFld = $('#password');,
+  var passwordFld = $('#password');
   var loginBtn = $('#loginBtn');
   var userServiceClient = new UserServiceClient();
   
