@@ -1,19 +1,27 @@
 (function () {
-
-  var $username, $firstName, $lastName,
-    $updateBtn;
-  var currentUser = null;
+	var userServiceClient = new UserServiceClient();
+	var usernameFld;
+	var passwordFld;
+	var firstNameFld;
+	var lastNameFld;
+	var emailFld;
+	var roleFld;
+	
+	var updateBtn;
+	var currentUser = null;
 
   function init() {
-
-    $username = $("#username");
-    $firstName = $("#firstName");
-    $lastName = $("#lastName");
-    $updateBtn = $("#updateBtn");
-
-    $updateBtn.click(updateUser);
-
-    profile()
+	  usernameFld = $("#username");
+	  passwordFld = $('#password');
+	  firstNameFld = $("#firstName");
+	  lastNameFld = $("#lastName");
+	  emailFld = $('#email');
+	  roleFld = $('#email');
+	  
+      updateBtn = $("#updateBtn");
+      updateBtn.click(updateUser);
+      
+      profile()
       .then(renderUser);
   }
   init();
@@ -36,9 +44,10 @@
 
   function renderUser(user) {
     currentUser = user;
-    $username.val(user.username);
-    $firstName.val(user.firstName);
-    $lastName.val(user.lastName);
+    usernameFld.val(user.username);
+    firstNameFld.val(user.firstName);
+    lastNameFld.val(user.lastName);
+    
   }
 
   function profile() {
