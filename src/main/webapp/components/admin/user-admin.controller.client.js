@@ -76,6 +76,10 @@
 	console.log(event);
     var $button = $(event.currentTarget);
     var row = $button.parent().parent();
+    console.log(row);
+    console.log($button.parent());
+    console.log($('.username').html();
+    console.log(row.find($('.username')).html());
     
     if (inEdit) {
     	inEdit = false;
@@ -83,11 +87,11 @@
     	var id = $button.attr('id');
     	var newUser = new User();
         newUser.setUsername(row.find($('.username')).html());
-        newUser.setPassword($('.password').html());
-        newUser.setFirstName($('.firstName').html());
-        newUser.setLastName($('.lastName').html());
-        newUser.setEmail($('.email').html());
-        newUser.setRole($('.role').html());
+        newUser.setPassword(row.find($('.password')).html());
+        newUser.setFirstName(row.find($('.firstName')).html());
+        newUser.setLastName(row.find($('.lastName')).html());
+        newUser.setEmail(row.find($('.email')).html());
+        newUser.setRole(row.find($('.role')).html());
         
         userServiceClient
           .updateUser(id, newUser)
