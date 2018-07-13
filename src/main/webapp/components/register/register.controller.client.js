@@ -9,7 +9,8 @@
 
   registerBtn.click(registerHandler);
 
-  function registerHandler() {
+  function registerHandler(event) {
+	  console.log(event);
     var usernameStr = usernameFld.val();
     var passwordStr = passwordFld.val();
     var password2Str = password2Fld.val();
@@ -37,6 +38,6 @@
   }
 
   function registrationFailed() {
-    alert('oops')
+    alert('Registration failed.')
   }
 })();

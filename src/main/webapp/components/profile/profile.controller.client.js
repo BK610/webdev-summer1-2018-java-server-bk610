@@ -13,8 +13,6 @@
 
     $updateBtn.click(updateUser);
 
-    // findUserById(7)
-    //   .then(renderUser)
     profile()
       .then(renderUser);
   }

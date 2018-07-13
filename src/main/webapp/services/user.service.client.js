@@ -51,7 +51,7 @@ function UserServiceClient() {
 	  
 	  return fetch(url, {
 	      method: 'POST',
-	      body: JSON.stringify(user),
+	      body: {user},
 	      credentials: 'include',
 	      headers: {
 	        'content-type': 'application/json'}})

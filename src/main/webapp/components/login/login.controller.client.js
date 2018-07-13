@@ -20,14 +20,17 @@
 	  newUser.setPassword(passwordFld.val());
 	  
 	  userServiceClient.login(newUser)
-	  	.then(navigateToProfile,
-	  			function () {
-	  				alert('Unsuccessful login.');
-	  			});
+	  	.then(checkLogin);
   }
-
-  function navigateToProfile() {
-	  console.log("Navigating a la profile");
-	  window.location.href = '/components/profile/profile.template.client.html';
+  
+  function checkLogin(user) {
+	  console.log("Checking login.");
+	  if (user.username == null || user.password == null) {
+		  console.log('failed login.');
+		  alert('Login failed.');
+	  } else {
+		  console.log("Navigating a la profile");
+		  window.location.href = '/components/profile/profile.template.client.html';
+	  }
   }
 })();
