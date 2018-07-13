@@ -15,24 +15,28 @@
     var passwordStr = passwordFld.val();
     var password2Str = password2Fld.val();
     
-    if (passwordStr === password2Str) {
-    	var userObj = {
-    		      username: usernameStr,
-    		      password: passwordStr
-    		    };
-
-    		    var userObjStr = JSON.stringify(userObj);
-
-    		    fetch('/register', {
-    		      method: 'post',
-    		      body: userObjStr,
-    		      headers: {
-    		        'Content-Type': 'application/json'
-    		      },
-    		      'credentials': 'include'
-    		    }).then(registrationSuccessful, registrationFailed)
-    } else {
+    if (passwordStr !== password2Str) {
     	alert('Passwords must match.');
+    } else if (usernameStr === "") {
+    	alert('Please specify username.');
+    } else if (passwordStr === "" or password2Str === "") {
+    	alert('Please specify both passwords.');
+    } else {
+    	var userObj = {
+  		      username: usernameStr,
+  		      password: passwordStr
+  		    };
+
+	    var userObjStr = JSON.stringify(userObj);
+
+	    fetch('/register', {
+	      method: 'post',
+	      body: userObjStr,
+	      headers: {
+	        'Content-Type': 'application/json'
+	      },
+	      'credentials': 'include'
+	    }).then(registrationSuccessful, registrationFailed)
     }
   }
   
