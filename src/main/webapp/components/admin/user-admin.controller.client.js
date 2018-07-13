@@ -31,6 +31,7 @@
 
   function deleteUser(event) {
     console.log(event);
+    inEdit = false;
     var $button = $(event.currentTarget);
     var id = $button.attr('id');
 
@@ -45,6 +46,7 @@
   
   function createUser(event) {
     console.log(event);
+    inEdit = false;
     var $button = $(event.currentTarget);
     
     var newUser = new User();
