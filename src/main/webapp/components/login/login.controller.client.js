@@ -8,8 +8,8 @@
 	  usernameFld = $('#username');
 	  passwordFld = $('#password');
     $loginBtn = $('#loginBtn');
-    
     $loginBtn.click(login);
+    console.log($loginBtn);
   }
   init();
   
