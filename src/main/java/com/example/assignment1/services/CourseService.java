@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.webdevsummer22018serverjavajannunzi.models.Course;
-import com.example.webdevsummer22018serverjavajannunzi.repositories.CourseRepository;
+import com.example.assignment1.models.Course;
+import com.example.assignment1.repositories.CourseRepository;
 
 @RestController
 @CrossOrigin(origins="*")
