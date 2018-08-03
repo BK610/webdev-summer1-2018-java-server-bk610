@@ -16,10 +16,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.assignment1.models.Course;
 import com.example.assignment1.repositories.CourseRepository;
 
-import webdev.models.Course;
-import webdev.models.Module;
-import webdev.repositories.CourseRepository;
-import webdev.repositories.ModuleRepository;
+import com.example.assignment1.models.Module;
+import com.example.assignment1.repositories.ModuleRepository;
 
 @RestController
 @CrossOrigin(origins = "*", maxAge = 3600)
