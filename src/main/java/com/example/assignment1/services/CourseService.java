@@ -58,7 +58,8 @@ public class CourseService {
 		if(optional.isPresent()) {
 			Course course = optional.get();
 			course.setTitle(newCourse.getTitle());
-			return courseRepository.save(course);
+			courseRepository.save(course);
+			return course;
 		}
 		return null;
 	}
