@@ -14,7 +14,7 @@ public class Course {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	private String title;
-	@OneToMany(mappedBy="course")
+	@OneToMany(mappedBy="course", orphanRemoval = true)
 	private List<Module> modules;
 
 	public int getId() {
