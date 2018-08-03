@@ -64,4 +64,17 @@ public class ModuleService {
     {
         return (List<Module>) moduleRepository.findAll();
     }
+
+    @PutMapping("/api/module/{moduleId}")
+    public Module updateModule(
+            @PathVariable("moduleId") int id,
+            @RequestBody Module newModule) {
+        Optional<Module> optional = moduleRepository.findById(id);
+        if(optional.isPresent()) {
+            Module module = optional.get();
+            module.setTitle(newModule.getTitle());
+            return moduleRepository.save(module);
+        }
+        return null;
+    }
 }
