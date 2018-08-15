@@ -61,7 +61,7 @@ public class LessonService {
         return (List<Lesson>) lessonRepository.findAll();
     }
 
-    @GetMapping("api/lesson/{lessonId}")
+    @GetMapping("/api/lesson/{lessonId}")
     public Lesson findLessonById(@PathVariable("lessonId") int lessonId) {
         Optional<Lesson> optional = lessonRepository.findById(lessonId);
         if (optional.isPresent()) {
@@ -83,7 +83,7 @@ public class LessonService {
         }
     }
 
-    @PutMapping("api/lesson/{lessonId}")
+    @PutMapping("/api/lesson/{lessonId}")
     public Lesson updateLesson(@PathVariable("lessonId") int lessonId,
                                @RequestBody Lesson newLesson) {
         Optional<Lesson> optional = lessonRepository.findById(lessonId);
