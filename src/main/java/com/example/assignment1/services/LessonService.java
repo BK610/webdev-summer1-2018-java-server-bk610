@@ -79,7 +79,6 @@ public class LessonService {
             return m.getLessons();
         } else {
             List<Lesson> lessons = new ArrayList<Lesson>();
-            lessons.add(new Lesson());
             return lessons;
         }
     }
