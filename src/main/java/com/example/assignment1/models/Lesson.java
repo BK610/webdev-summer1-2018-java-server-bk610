@@ -20,7 +20,7 @@ public class Lesson {
 	@ManyToOne
 	@JsonIgnore
 	private Module module;
-	@OneToMany(mappedBy="lesson")
+	@OneToMany(mappedBy="lesson", orphanRemoval = true)
 	private List<Widget> widgets;
 
 	public int getId() {
