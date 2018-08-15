@@ -11,6 +11,7 @@ public class Widget {
     private int id;
     private String text;
     private String widgetType;
+
     @ManyToOne
     @JsonIgnore
     private Lesson lesson;

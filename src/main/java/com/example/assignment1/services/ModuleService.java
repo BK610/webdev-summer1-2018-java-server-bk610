@@ -66,6 +66,16 @@ public class ModuleService {
         return (List<Module>) moduleRepository.findAll();
     }
 
+    @GetMapping("api/module/{moduleId}")
+    public Module findModuleById(@PathVariable("moduleId") int moduleId) {
+        Optional<Module> optional = moduleRepository.findById(moduleId);
+        if (optional.isPresent()) {
+            return optional.get();
+        } else {
+            return null;
+        }
+    }
+
     @PutMapping("/api/module/{moduleId}")
     public Module updateModule(
             @PathVariable("moduleId") int id,
