@@ -14,7 +14,7 @@ public class WidgetService {
 	@Autowired
 	WidgetRepository widgetRepository;
 
-	@GetMapping("/api/widget/")
+	@GetMapping("/api/widget")
 	public List<Widget> findAllWidgets() {
 		return (List<Widget>) widgetRepository.findAll();
 	}
