@@ -21,7 +21,7 @@ public class Lesson {
 	@JsonIgnore
 	private Module module;
 	@OneToMany(mappedBy="lesson")
-	private List<Topic> topics;
+	private List<Widget> widgets;
 	public int getId() {
 		return id;
 	}
@@ -40,10 +40,10 @@ public class Lesson {
 	public void setModule(Module module) {
 		this.module = module;
 	}
-	public List<Topic> getTopics() {
-		return topics;
+	public List<Widget> getWidgets() {
+		return widgets;
 	}
-	public void setTopics(List<Topic> topics) {
-		this.topics = topics;
+	public void setWidgets(List<Widget> widgets) {
+		this.widgets = widgets;
 	}
 }
