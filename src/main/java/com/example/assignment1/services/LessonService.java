@@ -57,8 +57,8 @@ public class LessonService {
     }
 
     @GetMapping("/api/lesson")
-    public Iterable<Lesson> findAllLessons() {
-        return lessonRepository.findAll();
+    public List<Lesson> findAllLessons() {
+        return (List<Lesson>) lessonRepository.findAll();
     }
 
     @GetMapping("api/lesson/{lessonId}")
