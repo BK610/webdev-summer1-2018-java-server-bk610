@@ -65,11 +65,23 @@ public class WidgetService {
             if (newWidget.getWidgetType() != null) {
                 widget.setWidgetType(newWidget.getWidgetType());
             }
+            if (newWidget.getTitle() != null) {
+                widget.setTitle(newWidget.getTitle());
+            }
             if (newWidget.getText() != null) {
                 widget.setText(newWidget.getText());
             }
             if (newWidget.getLesson() != null) {
                 widget.setLesson(newWidget.getLesson());
+            }
+            if (newWidget.getUrl() != null) {
+                widget.setUrl(newWidget.getUrl());
+            }
+            if (newWidget.getSize() != 0) {
+                widget.setSize(newWidget.getSize());
+            }
+         if (newWidget.getListType() != null) {
+                widget.setListType(newWidget.getListType());
             }
             widgetRepository.save(widget);
             return widget;
